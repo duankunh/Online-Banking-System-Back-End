@@ -37,3 +37,34 @@ Finally, the project leverages Django's powerful forms for user inputs, handling
 Each form performs necessary checks and raises appropriate error messages when a field is missing or invalid. For instance, 'SignupForm' and 'UpdateUserForm' check if the two password fields match and if the email is valid.
 
 Please remember that this project is a starting point. Real-world applications may require further enhancements such as more robust error handling, permissions and roles handling, data pagination, API endpoints, etc.
+
+## Model
+
+User: This is Django's built-in model for user management. It has fields like username, password, email, first_name, last_name, and many others. This model is typically used for authentication and authorization in Django applications.
+
+### Bank: This is a custom model that represents a bank. It has the following fields:
+
+owner: A foreign key relationship to Django's User model. This field specifies the owner of the bank. The CASCADE option means that when the referenced user is deleted, also delete the bank they own.
+
+name: This is a character field that stores the name of the bank, up to 200 characters.
+
+swift_code: This is a character field that stores the bank's SWIFT code, which is a standard format of Business Identifier Codes approved by the International Organization for Standardization (ISO).
+
+inst_num: This is a character field that stores the institution number of the bank.
+
+description: This is a character field that stores a description of the bank, up to 200 characters.
+
+### Branch: This is a custom model that represents a branch of a bank. It has the following fields:
+
+name: This is a character field that stores the name of the branch, up to 200 characters.
+
+transit_num: This is a character field that stores the transit number of the branch.
+
+address: This is a character field that stores the address of the branch, up to 200 characters.
+
+email: This is an email field that stores the email address of the branch, with a default value.
+
+capacity: This is a positive integer field that stores the capacity of the branch. The blank=True, null=True options mean that this field is optional.
+
+bank: A foreign key relationship to the Bank model. This field specifies which bank the branch belongs to. The CASCADE option means that when the referenced bank is deleted, also delete the branch.
+last_modified: This is a datetime field that stores the timestamp of the last time this branch was modified. The auto_now=True option means that the field will automatically be updated whenever the branch object is saved.
