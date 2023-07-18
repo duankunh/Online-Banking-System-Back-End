@@ -1,0 +1,10 @@
+{% extends 'displaybase.html' %}
+{% block title%}
+    <title> Bank Detail </title>
+{% endblock %}
+{% block content%}
+    <h1>{{ bank.name }}</h1><br>
+    <p>Swift Code: {{ bank.swift_code }}</p><br>
+    <p>Institution Number: {{ bank.inst_num }}</p><br>
+    <p>Description: {{ bank.description }}</p>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>All Banks</title>
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+<h1>All Banks</h1>
+<ul>
+    {% for bank in banks %}
+        <li><p> {{ bank.id }} -- {{ bank.name }}</p> </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+</body>
+</html>

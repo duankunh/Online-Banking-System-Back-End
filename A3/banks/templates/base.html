@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Title</title>
+    {% endblock %}
+</head>
+<body>
+<form method="POST">
+    {% block header %}
+        <h1>Header</h1>
+    {% endblock %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+</body>
+</html>
